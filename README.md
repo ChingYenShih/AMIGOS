@@ -6,7 +6,7 @@ Please read the following documents first
 
 [1] [AMIGOS: A Dataset for Affect, Personality and Mood Research on Individuals and Groups](https://arxiv.org/pdf/1702.02510.pdf)
 
-[2] [Entropy-Assisted Multi-Modal Emotion Recognition Framework Based on Physiological Signals](https://arxiv.org/pdf/1809.08410.pdf) (This repo is forked from authors of this paper)
+[2] [Entropy-Assisted Multi-Modal Emotion Recognition Framework Based on Physiological Signals](https://arxiv.org/pdf/1809.08410.pdf) (This repo forks from authors of this paper)
 
 [3] [Entropy-Assisted Emotion Recognition of Valence and Arousal Using XGBoost Classifier](http://access.ee.ntu.edu.tw/Publications/Conference/CA04_2018.pdf)
 
