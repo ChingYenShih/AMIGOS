@@ -258,7 +258,7 @@ def read_dataset(path):
     ''' Read AMIGOS dataset '''
     amigos_data = np.array([])
 
-    for sid in range(30, 40):
+    for sid in range(SUBJECT_NUM):
         for vid in range(VIDEO_NUM):
             if sid + 1 in MISSING_DATA_SUBJECT:
                 print("Skipping {}_{}.csv".format(sid + 1, vid + 1))
@@ -290,11 +290,12 @@ def main():
     """
     parser = ArgumentParser(
         description='Affective Computing with AMIGOS Dataset -- Feature Extraction')
-    parser.add_argument('--data', type=str, default='./data')
+    parser.add_argument('--i', type=str, default='./data/amigos_data')
+    parser.add_argument('--o', type=str, default='./data')      
     args = parser.parse_args()
 
-    amigos_data = read_dataset(args.data)
-    np.savetxt(os.path.join(args.data, 'gsr_rcmde_4.csv'),
+    amigos_data = read_dataset(args.i)
+    np.savetxt(os.path.join(args.o, 'mde_features.csv'),
                amigos_data, delimiter=',')
 
 

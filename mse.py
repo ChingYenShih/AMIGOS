@@ -16,7 +16,7 @@ from scipy.stats import skew, kurtosis
 from utils import butter_highpass_filter, butter_lowpass_filter
 from utils import getfreqs_power, getBand_Power, getFiveBands_Power
 from utils import detrend
-from utils import multiscale_entropy, permutation_entropy,RC_composite_multiscale_entropy,RC_sample_entropy
+from utils import multiscale_entropy,RC_composite_multiscale_entropy,RC_sample_entropy
 from config import SUBJECT_NUM, VIDEO_NUM, SAMPLE_RATE, MISSING_DATA_SUBJECT
 
 warnings.filterwarnings(action="ignore", module="scipy", message="^internal gelsd")
@@ -115,7 +115,7 @@ def gsr_preprocessing(signals):
     nor_signals = (signals - np.mean(signals)) / np.std(signals)
     con_signals = 1.0 / signals
     nor_con_signals = (con_signals - np.mean(con_signals)) / np.std(con_signals)
-    '''
+    
     max_scale = 7
     max_m = 7
     feature_rcmse = np.zeros(( max_m,max_scale))
@@ -127,6 +127,11 @@ def gsr_preprocessing(signals):
     
     feature_rcmse = feature_rcmse.flatten()
     feature_mse = feature_mse.flatten()
+
+    features=np.array([])
+    features=np.append(features,feature_mse)
+    features=np.append(features,feature_rcmse)
+    
     '''
     pe = []
     for m in range(3,6):
@@ -135,7 +140,7 @@ def gsr_preprocessing(signals):
     features=np.array([])
     features=np.append(features,pe)
     #features=np.append(features,feature_rcmse)
-
+    '''
     return features
 
 
@@ -154,12 +159,12 @@ def read_dataset(path):
             eeg_signals = signals[:, :14]
             ecg_signals = signals[:, 14]  # Column 14 or 15
             gsr_signals = signals[20:, -1]  # ignore the first 20 data, since there is noise in it
-
-            #eeg_features = eeg_preprocessing(eeg_signals)
+            
+            eeg_features = eeg_preprocessing(eeg_signals)
             ecg_features = ecg_preprocessing(ecg_signals)
-            #gsr_features = gsr_preprocessing(gsr_signals)
+            gsr_features = gsr_preprocessing(gsr_signals)
 
-            features = np.array( ecg_features )
+            features = np.array( eeg_features + ecg_features + gsr_features )
 
             amigos_data = np.vstack((amigos_data, features)) if amigos_data.size else features
 
@@ -170,11 +175,12 @@ def main():
     ''' Main function '''
     parser = ArgumentParser(
         description='Affective Computing with AMIGOS Dataset -- Feature Extraction')
-    parser.add_argument('--data', type=str, default='./data')
+    parser.add_argument('--i', type=str, default='./data/amigos_data')
+    parser.add_argument('--o', type=str, default='./data')    
     args = parser.parse_args()
 
-    amigos_data = read_dataset(args.data)
-    np.savetxt(os.path.join(args.data, 'bestmse_features.csv'), amigos_data, delimiter=',')
+    amigos_data = read_dataset(args.i)
+    np.savetxt(os.path.join(args.o, 'mse_features.csv'), amigos_data, delimiter=',')
 
 
 if __name__ == '__main__':

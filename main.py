@@ -25,24 +25,25 @@ def main():
     ''' Main function '''
     parser = ArgumentParser(
         description='Affective Computing with AMIGOS Dataset -- Cross Validation')
-    parser.add_argument('--data', type=str, default='./data')
-    parser.add_argument('--feat', type=str, choices=['eeg', 'ecg', 'gsr', 'all'],
+    parser.add_argument('-i', '--input', type=str, default='./data')
+    parser.add_argument('-i_label', '--input_label', type=str, default='./data/amigos_data')
+    parser.add_argument('-f', '--feat', type=str, choices=['eeg', 'ecg', 'gsr', 'all'],
                         default='all', help='choose type of modality')
-    parser.add_argument('--clf', type=str, choices=['gnb', 'svm', 'xgb'],
+    parser.add_argument('-c', '--clf', type=str, choices=['gnb', 'svm', 'xgb'],
                         default='xgb', help='choose type of classifier')
-    parser.add_argument('--nor', type=str, choices=['one', 'mean', 'no'],
+    parser.add_argument('-norm', '--nor', type=str, choices=['one', 'mean'],
                         default='mean', help='choose type of classifier')
-    parser.add_argument('--select', type=str, choices=['fisher', 'rfe', 'no'],
-                        default='no', help='choose type of feature selection')
-    parser.add_argument('--num', type=int, choices=range(0, 338),
-                        help='choose the number of features')
+    parser.add_argument('-sel', '--select', type=str, choices=['fisher', 'rfe', 'no'],
+                        default='fisher', help='choose type of feature selection')
+    parser.add_argument('-num','--num', type=int, choices=range(0, 338),
+                        default=20, help='choose the number of features')
     args = parser.parse_args()
 
     # read extracted features
-    amigos_data = np.loadtxt(os.path.join(args.data, 'mpe_features.csv'), delimiter=',')
+    amigos_data = np.loadtxt(os.path.join(args.input, 'features.csv'), delimiter=',')
 
     # read labels and split to 0 and 1 based on individual mean
-    labels = np.loadtxt(os.path.join(args.data, 'label.csv'), delimiter=',')
+    labels = np.loadtxt(os.path.join(args.input_label, 'label.csv'), delimiter=',')
     labels = labels[:, :2]
     a_labels, v_labels = [], []
     for i in range(SUBJECT_NUM):
@@ -165,6 +166,7 @@ def main():
             a_idx = fisher_idx(args.num, train_data, train_a_labels)
             v_idx = fisher_idx(args.num, train_data, train_v_labels)
             train_a_data, train_v_data = train_data[:, a_idx], train_data[:, v_idx]
+            print(train_a_data.shape)
             val_a_data, val_v_data = val_data[:, a_idx], val_data[:, v_idx]
         elif args.select == 'rfe':
             a_clf_select.fit(train_data, train_a_labels)
@@ -176,8 +178,8 @@ def main():
             a_idx = np.where(a_clf_select.ranking_ == 1)
             v_idx = np.where(v_clf_select.ranking_ == 1)
         else:
-            train_a_data, train_v_data = train_data
-            val_a_data, val_v_data = val_data
+            train_a_data, train_v_data = train_data, train_data
+            val_a_data, val_v_data = val_data, val_data
 
         # record feature selection history
         # for i in a_idx:
