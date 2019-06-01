@@ -73,7 +73,7 @@ In label.csv, the data format will be like
 
 ### Basic Feature Extraction
 
-Extract basic features and store features to data/features.csv (if didn't assign the output path (recommended))
+Extract 287 basic features and store features to data/features.csv (if didn't assign the output path (recommended))
 ```
 python3 preprocess.py -i </path/to/amigos_data> -o </path/to/features.csv>
   -i <data directory>
@@ -81,11 +81,11 @@ python3 preprocess.py -i </path/to/amigos_data> -o </path/to/features.csv>
   -o <output features path>
     path of output feature (default: data/features.csv)
 ```
-#### EEG feature extraction
+#### EEG feature extraction (175)
 Extract power, spectral and relative power of theta, slow alpha, alpha, beta, gamma bands
-#### ECG feature extraction
+#### ECG feature extraction (81)
 Extract rms(IBI), mean(IBI), 60 spectral power in the bands from [0-6] Hz component of the ECG signal, VLF, LF, HF, TF band power of ECG signal, LF/HF, LF/TF, HF/TF, normalized LF, normalized HF, mean(HR), std(HR), skew(HR), kurt(HR), percentage of high HR, percentage of low HR
-#### GSR feature extraction
+#### GSR feature extraction (31)
 Extract mean(GSR), mean(first diff of GSR), mean differential for negative values only (mean decrease rate during
 decay time), proportion of negative derivative samples, number of local minima in the GSR signal, average rising time of
 the GSR signal, spectral power in the [0-2.4] Hz band, zero crossing rate of skin conductance slow response (SCSR) [0-0.2] Hz, zero crossing rate of skin conductance very slow response (SCVSR) [0-0.08] Hz, mean SCSR and SCVSR peak magnitude.
