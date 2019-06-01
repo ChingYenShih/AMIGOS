@@ -14,7 +14,7 @@ Please read the following papers and documents first
 
 ## Environment Setting
 1. Clone this repo
-2. put amigos_data under ./data
+2. put **amigos_data** under **./data**
 3. python version: 3.6.5
 4. pip3 install -r requirements.txt
 
@@ -34,13 +34,10 @@ tune.py       - used to find the best parameters
 
 
 ## Preprocessed Data Description
-We preprocess downloaded Amigos matlab data to csv (subjectID_videoNumber.csv) format in amigos_data directory, you have to clone the repo first and save amigos_data under the data directory of this repo
-
-In each csv file, the row corresponds to the time stamp (fs = 128 Hz), and the column corresponds to the physiological signal's channel (14 EEG + 2 ECG + 1 GSR)
-
+We preprocess downloaded AMIGOS matlab data to csv (subjectID_videoNumber.csv) format in **amigos_data/**, you have to clone the repo first and save **amigos_data/** under the **data/** of this repo. The following is the example layout.
 
 ```
-.
+AMIGOS
 ├── data
 |   ├── amigos_data
 |   |   ├── 1_1.csv    
@@ -49,6 +46,9 @@ In each csv file, the row corresponds to the time stamp (fs = 128 Hz), and the c
 |   |   ├── label.csv                                            
 
 ```
+
+In each csv file, the row corresponds to the time stamp (fs = 128 Hz), and the column corresponds to the physiological signal's channel (14 EEG + 2 ECG + 1 GSR)
+
 In 1_1.csv, the data format will be like
 
 |   |EEG1|EEG2|...|EEG14|ECG1|ECG2|GSR|
