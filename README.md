@@ -14,7 +14,7 @@ Please read the following papers and documents first
 
 ## Environment Setting
 1. Clone this repo
-2. put **amigos_data** under **./data**
+2. put **amigos_data/** under **data/**
 3. python version: 3.6.5
 4. pip3 install -r requirements.txt
 
