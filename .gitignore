@@ -5,7 +5,3 @@ history/*
 plot/*
 venv/
 venv/*
-!data/features.csv
-!data/label.csv
-!data/a_features.csv
-!data/v_features.csv
