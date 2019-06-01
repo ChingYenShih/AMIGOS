@@ -14,8 +14,8 @@ Please read the following documents first
 
 ## Environment Setting
 1. Clone this repo
-2. put amigos_data under /data
-3. python version 3.6.5
+2. put amigos_data under ./data
+3. python version: 3.6.5
 4. pip3 install -r requirements.txt
 
 ## File Description
@@ -103,7 +103,7 @@ mpe.py, mde.py, mmse.py, mse.py define the utils of entropy domain feature extra
 
 ```
 python3 main.py -i </directory/of/features.csv> -i_label </directory/of/label.csv> 
-                -f <modality selection> -c <classifier selection> 
+                -f <modality> -c <classifier> 
                 -norm <normalization method> -sel <feature selection method> 
                 -num <number of features used after feature selection>
   -i <data directory> (default: ./data)
