@@ -2,7 +2,7 @@ Affective Computing with AMIGOS Dataset
 ===
 
 ## Reference
-Please read the following documents first
+Please read the following papers and documents first
 
 [1] [AMIGOS: A Dataset for Affect, Personality and Mood Research on Individuals and Groups](https://arxiv.org/pdf/1702.02510.pdf)
 
