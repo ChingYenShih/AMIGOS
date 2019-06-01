@@ -90,11 +90,11 @@ Extract mean(GSR), mean(first diff of GSR), mean differential for negative value
 decay time), proportion of negative derivative samples, number of local minima in the GSR signal, average rising time of
 the GSR signal, spectral power in the [0-2.4] Hz band, zero crossing rate of skin conductance slow response (SCSR) [0-0.2] Hz, zero crossing rate of skin conductance very slow response (SCVSR) [0-0.08] Hz, mean SCSR and SCVSR peak magnitude.
 
-####  Entropy Feature Extraction
+###  Entropy Feature Extraction
 mpe.py, mde.py, mmse.py, mse.py define the utils of entropy domain feature extraction, you have to extract the features and assign the parameters manually using these files
 
 
-#### Training and Cross-Validation
+### Training and Cross-Validation
 * Load features.csv and label.csv as the input and output of the classifier.
 * Binary split the arousal and valence, if arousal > mean arousal of that subject -> arousal = 1, and vice versa
 * Feature selection
@@ -123,7 +123,7 @@ python3 main.py -i </directory/of/features.csv> -i_label </directory/of/label.cs
 
 ```
 
-## Result
+### Result
 If only use basic features and use the default setting as following
 ```
 python3 preprocess.py
