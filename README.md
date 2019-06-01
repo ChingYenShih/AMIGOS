@@ -51,7 +51,7 @@ In each csv file, the row corresponds to the time stamp (fs = 128 Hz), and the c
 
 In 1_1.csv, the data format will be like
 
-|   |EEG1|EEG2|...|EEG14|ECG1|ECG2|GSR|
+|TIMESTAMP|EEG1|EEG2|...|EEG14|ECG1|ECG2|GSR|
 |:----:|:----:|:----:|:----:|:----:|:----:|:----:|:----:|
 | time stamp 1|...|...|...|...|...|...|...|
 | time stamp 2|...|...|...|...|...|...|...|
@@ -59,7 +59,7 @@ In 1_1.csv, the data format will be like
 
 In label.csv, the data format will be like
 
-|   |Arousal|Valence|Dominance|Liking|Familiarity|Neutral|Disgust|Happiness|Surprise|Anger|Fear|Sadness|
+|subID_videoNum|Arousal|Valence|Dominance|Liking|Familiarity|Neutral|Disgust|Happiness|Surprise|Anger|Fear|Sadness|
 |:----:|:----:|:----:|:----:|:----:|:----:|:----:|:----:|:----:|:----:|:----:|:----:|:----:|
 |1_1|...|...|...|...|...|...|...|...|...|...|...|...|
 |1_2|...|...|...|...|...|...|...|...|...|...|...|...|
