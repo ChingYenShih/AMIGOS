@@ -107,7 +107,7 @@ python3 main.py -i </directory/of/features.csv> -i_label </directory/of/label.cs
                 -norm <normalization method> -sel <feature selection method> 
                 -num <number of features used after feature selection>
   -i <data directory> (default: ./data)
-    directory of features.csv and label.csv
+    directory of features.csv
   -i_label <data directory> (default: ./data/amigos_data)
     directory of label.csv
   -f <modality> (default: all)
@@ -141,40 +141,3 @@ python3 main.py
 
 
 
-
-
-
-## Requirement
-
-preprocess.py
-
-numpy
-biosppy
-EMD-signal == 0.2.3  
-xgboost
-
-
-
-Python == 3.6.3  
-biosppy == 0.5.0  
-EMD-signal == 0.2.3  
-numpy == 1.13.3  
-scipy == 0.19.1  
-scikit-learn == 0.19.0  
-xgboost == 0.6  
-
-## Usage
-
-```bash
-# Feature extraction (features stored in data/features.p)
-python preprocess.py --data [AMIGOS_DATA_DIRECTORY (default is ./data)]
-
-# Training and Cross Validation
-python main.py --data [AMIGOS_DATA_DIRECTORY (default is ./data)]
-               --feat [MODALITY_TYPE (default is all)]
-               --clf [CLASSIFIER_TYPE (default is xgb)]
-               --nor [NORMALIZATION_METHOD (default is no)]
-
-# Print help message
-python main.py -h
-```
