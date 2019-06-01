@@ -35,7 +35,7 @@ def main():
                         default='mean', help='choose type of classifier')
     parser.add_argument('-sel', '--select', type=str, choices=['fisher', 'rfe', 'no'],
                         default='fisher', help='choose type of feature selection')
-    parser.add_argument('-num','--num', type=int, choices=range(0, 338),
+    parser.add_argument('-num','--num', type=int,
                         default=20, help='choose the number of features')
     args = parser.parse_args()
 
@@ -131,14 +131,16 @@ def main():
         print(idx + 1, 'Fold Start')
 
         # collect data for cross validation
+        print(amigos_data.shape)
         if args.feat == 'eeg':
-            train_data, val_data = amigos_data[train_idx][:175], amigos_data[val_idx][:175]
+            train_data, val_data = amigos_data[train_idx,:175], amigos_data[val_idx,:175]
         elif args.feat == 'ecg':
-            train_data, val_data = amigos_data[train_idx][175:256], amigos_data[val_idx][175:256]
+            train_data, val_data = amigos_data[train_idx,175:256], amigos_data[val_idx,175:256]
         elif args.feat == 'gsr':
-            train_data, val_data = amigos_data[train_idx][256:], amigos_data[val_idx][256:]
+            train_data, val_data = amigos_data[train_idx,256:], amigos_data[val_idx,256:]
         elif args.feat == 'all':
             train_data, val_data = amigos_data[train_idx], amigos_data[val_idx]
+
         train_a_labels, val_a_labels = a_labels[train_idx], a_labels[val_idx]
         train_v_labels, val_v_labels = v_labels[train_idx], v_labels[val_idx]
 

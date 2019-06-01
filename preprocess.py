@@ -262,11 +262,12 @@ def main():
     ''' Main function '''
     parser = ArgumentParser(
         description='Affective Computing with AMIGOS Dataset -- Feature Extraction')
-    parser.add_argument('--data', type=str, default='./data')
+    parser.add_argument('--i', type=str, default='./data/amigos_data')
+    parser.add_argument('--o', type=str, default='./data')
     args = parser.parse_args()
 
-    amigos_data = read_dataset(args.data)
-    np.savetxt(os.path.join(args.data, 'features.csv'), amigos_data, delimiter=',')
+    amigos_data = read_dataset(args.i)
+    np.savetxt(os.path.join(args.o, 'features.csv'), amigos_data, delimiter=',')
 
 
 if __name__ == '__main__':
