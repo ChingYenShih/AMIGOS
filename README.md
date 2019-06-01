@@ -117,7 +117,7 @@ python3 main.py -i </directory/of/features.csv> -i_label </directory/of/label.cs
   -norm <normalization method> (default: mean)
     choices: [mean (zero mean), one (map to [-1, 1])]
   -sel <feature selection method> (default: fisher)
-    choices: pfisher, rfe, no (without selection)]
+    choices: fisher, rfe, no (without selection)]
   -num <number of features used after feature selection> (default: 20)
     assign the number of features
 
