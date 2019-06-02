@@ -26,16 +26,17 @@ Please read the following papers and documents first
 
 ## File Description
 ```
-config.py     - parameters used in other files
-main.py       - read the features from features.csv, train the classifier, do the cross-validation
-mde.py        - util of extracting Dispersion Entropy (DE)
-mmse.py       - util of extracting Multivariate Multi-Scale Entropy (MMSE)
-mpe.py        - util of extracting Multivariate Permutation Entropy (MPE)
-mse.py        - util of extracting Multi-Scale Entropy (MSE)
-preprocess.py - extract basic features from EEG, ECG, GSR
-sep.py        - concatenate two features file into one files (have to modify manually to meet your purpose)
-utils.py      - several functions using in other files
-tune.py       - used to find the best parameters
+config.py        - parameters used in other files
+main.py          - read the features from features.csv, train the classifier, do the cross-validation
+mde.py           - util of extracting Dispersion Entropy (DE)
+mmse.py          - util of extracting Multivariate Multi-Scale Entropy (MMSE)
+mpe.py           - util of extracting Multivariate Permutation Entropy (MPE)
+mse.py           - util of extracting Multi-Scale Entropy (MSE)
+preprocess.py    - extract basic features from EEG, ECG, GSR
+sep.py           - concatenate two features file into one files (have to modify manually to meet your purpose)
+utils.py         - several functions using in other files
+tune.py          - used to find the best parameters
+requirements.txt - the required packages
 ```
 
 
@@ -111,7 +112,9 @@ In features.csv, the data format will be like. Note that in the column of subID_
 
 
 ###  Entropy Feature Extraction
-mpe.py, mde.py, mmse.py, mse.py define the utils of entropy domain feature extraction, you have to extract the features and assign the parameters manually using these files
+mpe.py, mde.py, mmse.py, mse.py define the utils of entropy domain feature extraction, you have to extract the features and assign the parameters manually using these files. The usage of this file is the same as preprocess.py, after you extract extropy features, you can concatenate features using sep.py
+
+
 
 
 ### Training and Cross-Validation
