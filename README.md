@@ -98,7 +98,7 @@ decay time), proportion of negative derivative samples, number of local minima i
 the GSR signal, spectral power in the [0-2.4] Hz band, zero crossing rate of skin conductance slow response (SCSR) [0-0.2] Hz, zero crossing rate of skin conductance very slow response (SCVSR) [0-0.08] Hz, mean SCSR and SCVSR peak magnitude.
 
 
-In features.csv, the data format will be like. Note that in the column of subID_videoNum, we will remove the subID_videoNum which consist incomplete data. Therefore, the length of row is 528 rather than 640
+In features.csv, the data format is like below. Note that in the column of subID_videoNum, we will remove the subID_videoNum which consists incomplete data. Therefore, the length of the row is 528 rather than 640
 
 |subID_videoNum|feature 1|feature 2|...|...|feature 286|feature 287|
 |:----:|:----:|:----:|:----:|:----:|:----:|:----:|
