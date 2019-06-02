@@ -5,6 +5,7 @@ Affective Computing with AMIGOS Dataset
 Please read the following papers and documents first
 
 [1] [Entropy-Assisted Multi-Modal Emotion Recognition Framework Based on Physiological Signals](https://arxiv.org/pdf/1809.08410.pdf) 
+
 (This repo forks from the repo of this paper's authors)
 
 [2] [Entropy-Assisted Emotion Recognition of Valence and Arousal Using XGBoost Classifier](http://access.ee.ntu.edu.tw/Publications/Conference/CA04_2018.pdf)
