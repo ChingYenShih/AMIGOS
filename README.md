@@ -12,9 +12,9 @@ Please read the following papers and documents first
 
 [3] [Feature Introduction and Performance](https://github.com/ChingYenShih/AMIGOS/blob/master/slide/FeatureIntro.pptx), [Paper Slide](https://github.com/ChingYenShih/AMIGOS/blob/master/slide/PaperSlide.pptx)
 
-[3] [AMIGOS: A Dataset for Affect, Personality and Mood Research on Individuals and Groups](https://arxiv.org/pdf/1702.02510.pdf)
+[4] [AMIGOS: A Dataset for Affect, Personality and Mood Research on Individuals and Groups](https://arxiv.org/pdf/1702.02510.pdf)
 
-[4] [AMIGOS Dataset Website](http://www.eecs.qmul.ac.uk/mmv/datasets/amigos/index.html)
+[5] [AMIGOS Dataset Website](http://www.eecs.qmul.ac.uk/mmv/datasets/amigos/index.html)
 
 
 
