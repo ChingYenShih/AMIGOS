@@ -112,7 +112,7 @@ In features.csv, the data format is like below. Note that in the column of subID
 
 
 ###  Entropy Feature Extraction
-mpe.py, mde.py, mmse.py, mse.py define the utils of entropy domain feature extraction, you have to extract the features and assign the parameters manually using these files. The usage of this file is the same as preprocess.py, after you extract extropy features, you can concatenate features using sep.py
+**mpe.py**, **mde.py**, **mmse.py**, **mse.py** define the utils of entropy domain feature extraction, you have to extract the features and assign the parameters manually using these files. The usage of this file is the same as the **preprocess.py**, after you extract extropy features, you can concatenate features using **sep.py**
 
 
 
