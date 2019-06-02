@@ -14,7 +14,7 @@ Please read the following papers and documents first
 
 [3] [AMIGOS: A Dataset for Affect, Personality and Mood Research on Individuals and Groups](https://arxiv.org/pdf/1702.02510.pdf)
 
-[4] [AMIGOS Dataset](http://www.eecs.qmul.ac.uk/mmv/datasets/amigos/index.html)
+[4] [AMIGOS Dataset Website](http://www.eecs.qmul.ac.uk/mmv/datasets/amigos/index.html)
 
 
 
@@ -95,6 +95,20 @@ Extract rms(IBI), mean(IBI), 60 spectral power in the bands from [0-6] Hz compon
 Extract mean(GSR), mean(first diff of GSR), mean differential for negative values only (mean decrease rate during
 decay time), proportion of negative derivative samples, number of local minima in the GSR signal, average rising time of
 the GSR signal, spectral power in the [0-2.4] Hz band, zero crossing rate of skin conductance slow response (SCSR) [0-0.2] Hz, zero crossing rate of skin conductance very slow response (SCVSR) [0-0.08] Hz, mean SCSR and SCVSR peak magnitude.
+
+
+In features.csv, the data format will be like
+
+|subID_videoNum|feature 1|feature 2|...|...|feature 286|feature 287|
+|:----:|:----:|:----:|:----:|:----:|:----:|:----:|
+|1_1|...|...|...|...|...|...|
+|1_2|...|...|...|...|...|...|
+|...|...|...|...|...|...|...|
+|1_16|...|...|...|...|...|...|
+|2_1|...|...|...|...|...|...|
+|...|...|...|...|...|...|...|
+|40_16|...|...|...|...|...|...|
+
 
 ###  Entropy Feature Extraction
 mpe.py, mde.py, mmse.py, mse.py define the utils of entropy domain feature extraction, you have to extract the features and assign the parameters manually using these files
