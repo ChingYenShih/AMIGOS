@@ -4,13 +4,17 @@ Affective Computing with AMIGOS Dataset
 ## Reference
 Please read the following papers and documents first
 
-[1] [AMIGOS: A Dataset for Affect, Personality and Mood Research on Individuals and Groups](https://arxiv.org/pdf/1702.02510.pdf)
+[1] [Entropy-Assisted Multi-Modal Emotion Recognition Framework Based on Physiological Signals](https://arxiv.org/pdf/1809.08410.pdf) (This repo forks from the repo of this paper's authors)
 
-[2] [Entropy-Assisted Multi-Modal Emotion Recognition Framework Based on Physiological Signals](https://arxiv.org/pdf/1809.08410.pdf) (This repo forks from authors of this paper)
+[2] [Entropy-Assisted Emotion Recognition of Valence and Arousal Using XGBoost Classifier](http://access.ee.ntu.edu.tw/Publications/Conference/CA04_2018.pdf)
 
-[3] [Entropy-Assisted Emotion Recognition of Valence and Arousal Using XGBoost Classifier](http://access.ee.ntu.edu.tw/Publications/Conference/CA04_2018.pdf)
+[3] [FeatureIntro](https://github.com/ChingYenShih/AMIGOS/blob/master/slide/FeatureIntro.pptx), [Paper Slide](https://github.com/ChingYenShih/AMIGOS/blob/master/slide/PaperSlide.pptx)
+
+[3] [AMIGOS: A Dataset for Affect, Personality and Mood Research on Individuals and Groups](https://arxiv.org/pdf/1702.02510.pdf)
 
 [4] [AMIGOS Dataset](http://www.eecs.qmul.ac.uk/mmv/datasets/amigos/index.html)
+
+
 
 ## Environment Setting
 1. Clone this repo
